@@ -469,6 +469,7 @@ rules:
   - DOMAIN-KEYWORD,google,auto
   - DOMAIN,google.com,auto
   - DOMAIN-SUFFIX,ad.com,REJECT
+  - DOMAIN-SUFFIX,ad.com,REJECT-DROP
   - SRC-IP-CIDR,192.168.1.201/32,DIRECT
   # optional param "no-resolve" for IP rules (GEOIP, IP-CIDR, IP-CIDR6)
   - IP-CIDR,127.0.0.0/8,DIRECT

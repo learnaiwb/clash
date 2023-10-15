@@ -18,10 +18,11 @@ TYPE,ARGUMENT,POLICY(,no-resolve)
 
 ## 策略
 
-目前有四种策略类型, 其中:
+目前有五种策略类型, 其中:
 
 - DIRECT: 通过 `interface-name` 直接连接到目标 (不查找系统路由表)
 - REJECT: 丢弃数据包
+- REJECT-DROP: 丢弃数据包但并不关闭连接，而是等待客户端超时，以应对某些应用产生的请求风暴
 - Proxy: 将数据包路由到指定的代理服务器
 - Proxy Group: 将数据包路由到指定的策略组
 

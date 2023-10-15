@@ -17,10 +17,11 @@ The `no-resolve` option is optional, and it's used to skip DNS resolution for th
 
 ## Policy
 
-There are four types of POLICY for now, in which:
+There are five types of POLICY for now, in which:
 
 - DIRECT: directly connects to the target through `interface-name` (does not lookup system route table)
 - REJECT: drops the packet
+- REJECT-DROP: drops the packet but does not close the connection, instead waits for the client to timeout, to deal with request storms from certain applications
 - Proxy: routes the packet to the specified proxy server
 - Proxy Group: routes the packet to the specified proxy group
 
