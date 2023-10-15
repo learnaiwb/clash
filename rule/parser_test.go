@@ -80,6 +80,12 @@ func TestParseRule(t *testing.T) {
 			expectedRule: lo.Must(NewIPCIDR("192.168.1.201/32", policy, WithIPCIDRSourceIP(true), WithIPCIDRNoResolve(true))),
 		},
 		{
+			tp:           C.RuleConfigSrcIPCIDR,
+			payload:      "2001:db8::/32",
+			target:       policy,
+			expectedRule: lo.Must(NewIPCIDR("2001:db8::/32", policy, WithIPCIDRSourceIP(true), WithIPCIDRNoResolve(true))),
+		},
+		{
 			tp:           C.RuleConfigSrcPort,
 			payload:      "80",
 			target:       policy,

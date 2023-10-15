@@ -76,7 +76,7 @@ When encountering this rule, Clash will resolve the domain name to an IP address
 
 ### SRC-IP-CIDR
 
-SRC-IP-CIDR rules are used to route packets based on the **source IPv4 address** of the packet.
+SRC-IP-CIDR rules are used to route packets based on the **source IPv4/IPv6 address** of the packet.
 
 `SRC-IP-CIDR,192.168.1.201/32,DIRECT` routes any packets **from** `192.168.1.201/32` to the `DIRECT` policy.
 
