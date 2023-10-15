@@ -360,8 +360,9 @@ func parseProxies(cfg *RawConfig) (proxies map[string]C.Proxy, providersMap map[
 	providersConfig := cfg.ProxyProvider
 
 	proxies["DIRECT"] = adapter.NewProxy(outbound.NewDirect())
-	proxies["REJECT"] = adapter.NewProxy(outbound.NewReject())
-	proxyList = append(proxyList, "DIRECT", "REJECT")
+	proxies["REJECT"] = adapter.NewProxy(outbound.NewReject(false))
+	proxies["REJECT-DROP"] = adapter.NewProxy(outbound.NewReject(true))
+	proxyList = append(proxyList, "DIRECT", "REJECT", "REJECT-DROP")
 
 	// parse proxy
 	for idx, mapping := range proxiesConfig {

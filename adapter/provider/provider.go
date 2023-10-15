@@ -18,7 +18,7 @@ import (
 	"gopkg.in/yaml.v3"
 )
 
-var reject = adapter.NewProxy(outbound.NewReject())
+var reject = adapter.NewProxy(outbound.NewReject(false))
 
 const (
 	ReservedName = "default"
